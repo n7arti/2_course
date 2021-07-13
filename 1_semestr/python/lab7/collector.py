@@ -17,7 +17,7 @@ with IMAP4_SSL(HOST, PORT) as M:
             with open("ID.txt", "r") as file:
                 INFO = [int(line) for line in file]
             if ID in INFO:
-                log = open("success_request.log", "a")
+                log = open("success_request.log", "a") ## файлы нужно предварительно создать или создать проверку на существование файла с созданием его в ином случае.
             else:
                 log = open("error_request.log", "a")
             log.write("%s: %s\n" % (ID, text))
